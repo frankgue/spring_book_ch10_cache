@@ -3,10 +3,14 @@ package com.wiley.beginningspring.ch10.model;
 public class User {
     private int id;
     private String name;
+    private String phoneNumber;
+    private int age;
 
-    public User(int id, String name) {
+    public User(int id, String name, String phoneNumber, int age) {
         this.id = id;
         this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.age = age;
     }
 
     public int getId() {
@@ -25,11 +29,19 @@ public class User {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }

@@ -1,6 +1,5 @@
 package com.wiley.beginningspring.ch10;
 
-import com.wiley.beginningspring.ch10.config.ApplicationConfig;
 import com.wiley.beginningspring.ch10.model.User;
 import com.wiley.beginningspring.ch10.service.UserService;
 import org.springframework.context.ApplicationContext;
@@ -15,13 +14,19 @@ public class App
 {
     public static void main( String[] args )
     {
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         UserService userService = applicationContext.getBean(UserService.class);
-        User userFetch1 = userService.getUser(1);
-        System.out.println(userFetch1);
 
-        User userFetch2 = userService.getUser(2);
+        User user1 = new User(2, "Mert", "5552345060", 34);
+        User userFetch1 = userService.getUser(user1);
+        System.out.println(userFetch1);
+        User userFetch2 = userService.getUser(user1);
         System.out.println(userFetch2);
+        User user2 = new User(1, "Kenan", "5554332088", 37);
+        User userFetch3 = userService.getUser(user2);
+        System.out.println(userFetch3);
+        User userFetch4 = userService.getUser(user2);
+        System.out.println(userFetch4);
 
     }
 }
