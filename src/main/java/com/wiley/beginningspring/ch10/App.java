@@ -20,10 +20,8 @@ public class App
         User userFetch1 = userService.getUser(1);
         System.out.println(userFetch1);
 
-        User userFetch2 = userService.getUser(userFetch1);
+        User userFetch2 = userService.getUser(2);
         System.out.println(userFetch2);
 
-        User userFetch3 = userService.getUser(userFetch1);
-        System.out.println(userFetch3);
     }
 }
